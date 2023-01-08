@@ -1,1 +1,1 @@
-export {}
+export default async function keyword() {}
