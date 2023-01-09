@@ -1,6 +1,6 @@
 import BackButton from '@components/button/BackButton'
 import Hamburger from '@components/button/hamburger'
-import Message from '@components/component/Message'
+import Message from '@components/component/message'
 import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 
