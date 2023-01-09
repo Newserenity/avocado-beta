@@ -8,6 +8,7 @@ import { useRecoilState } from 'recoil'
 interface ProductsGroupProps {
   title: string
   subTitle?: string
+  more?: boolean
   productlist: {
     itemId: number
     itemPrice: number
@@ -18,7 +19,12 @@ interface ProductsGroupProps {
   }[]
 }
 
-function ProductsGroup({ title, subTitle, productlist }: ProductsGroupProps) {
+function ProductsGroup({
+  title,
+  subTitle,
+  productlist,
+  more,
+}: ProductsGroupProps) {
   const [open, setOpen] = useRecoilState(unsupportedModalstate)
   return (
     <>
@@ -41,13 +47,15 @@ function ProductsGroup({ title, subTitle, productlist }: ProductsGroupProps) {
             />
           ))}
         </div>
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="mt-3 justify-center rounded-lg border border-gray-200 px-10 py-2 text-sm font-medium text-gray-900"
-        >
-          More
-        </button>
+        {more ? (
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="mt-3 justify-center rounded-lg border border-gray-200 px-10 py-2 text-sm font-medium text-gray-900"
+          >
+            More
+          </button>
+        ) : null}
       </div>
     </>
   )
