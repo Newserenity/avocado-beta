@@ -161,6 +161,7 @@ function Chatroom() {
               <Message
                 message={message.message}
                 reversed={res.userId === message.senderId}
+                key={message.messageId}
               />
             )),
           )}

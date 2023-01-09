@@ -110,22 +110,27 @@ const sold = [
 
 const badge = [
   {
+    id: 1,
     title: '本人確認',
     value: 'OK',
   },
   {
+    id: 2,
     title: '評価',
     value: 4.8,
   },
   {
+    id: 3,
     title: '販売',
     value: 10,
   },
   {
+    id: 4,
     title: '購入',
     value: 5,
   },
   {
+    id: 5,
     title: 'オープン',
     value: '+50',
   },
@@ -156,7 +161,7 @@ function Mypage() {
       </div>
       <div className="item-center flex w-full space-x-2 overflow-auto px-3 py-5 text-center">
         {badge.map((res) => (
-          <UserHistoryBadge value={res.value} title={res.title} />
+          <UserHistoryBadge value={res.value} title={res.title} key={res.id} />
         ))}
       </div>
       <div className="space-y-10">
